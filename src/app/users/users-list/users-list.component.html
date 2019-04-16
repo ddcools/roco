@@ -1,0 +1,20 @@
+<h4>Our users</h4> 
+
+<table>
+  <thead>
+    <th>
+      Name
+    </th>
+    <th>
+      Age
+    </th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let user of users; let oddRecord = odd; let evenRecord = even;" [ngClass]="{odd: oddRecord, even: evenRecord}">
+      <td>{{ user.name}}</td>
+      <td>{{ user.age }}</td>
+    </tr>
+  </tbody>
+
+</table>

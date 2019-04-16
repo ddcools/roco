@@ -5,10 +5,10 @@ import { HttpClient } from "@angular/common/http";
 @Injectable({
   providedIn: "root"
 })
-export class UsersService {
+export class UserService {
   constructor(private http: HttpClient) {}
 
-  getData() {
+  getUsersList() {
     return this.http.get("http://localhost:3000/users");
   }
 }

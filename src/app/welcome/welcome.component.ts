@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { UsersService } from "../users.service";
+import { UserService } from "../user.service";
 
 @Component({
   selector: "app-welcome",
@@ -11,18 +11,13 @@ export class WelcomeComponent implements OnInit {
   disabledValue = false;
 
   twoDataBinderVariable = "";
-  usersList = [];
+ 
+  constructor(private userService: UserService) {}
 
-  constructor(private usersService: UsersService) {}
-
-  ngOnInit() {
-    this.usersService.getData().subscribe(data => {
-      this.usersList = data["result"];
-    });
-  }
+  ngOnInit() {}
 
   disableTextField() {
     this.disabledValue = true;
-    console.log("Button disbaled");
+    console.log('Button disbaled');
   }
 }
